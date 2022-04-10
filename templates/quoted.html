@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+<h1>A share of {{ share.name }} ({{ share.symbol }}) costs {{ share.price | rupees }}</h1>
+<div class = list>
+    <h3>
+        <ul>
+            <br><br><br>
+            <br><li>Day High :  {{ share.dayHigh | rupees }}</li><br>
+            <br><li>Day Low :  {{ share.dayLow | rupees }}</li><br>
+            <br><li>52-week High :  {{ share.yearHigh | rupees }}</li><br>
+            <br><li>52-week Low :  {{ share.yearLow | rupees }}</li><br>
+        </ul>
+        </h3>
+</div>
+
+{% endblock %}

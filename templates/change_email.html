@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Change Email
+{% endblock %}
+
+{% block main %}
+    <form action="/change_email" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="new_email" placeholder="New Email" type="email">
+        </div>
+        <button class="btn btn-primary" type="submit">Change Email</button>
+    </form>
+{% endblock %}

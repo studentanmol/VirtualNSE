@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Welcome
+{% endblock %}
+
+{% block main %}
+<h1>Welcome, {{ name }} to Virtual NSE StockMarket!</h1><br><br>
+<h3>
+    <div class=list>
+        <ul>
+            <li>You can look up the current price of a stock and other details at Quote.</li><br>
+            <li>You can buy new stocks at Buy.</li><br>
+            <li>You can sell stocks you own at Sell.</li><br>
+            <li>You can view all your transactions at History.</li><br>
+            <li>You can view your portfolio at the home page.</li><br>
+            <li>You can also change your username and password.</li><br>
+            <li>You are provided a starting amount of 1,00,000 Rupees and can use the Add Cash option to add more to that.</li><br>
+        </ul>
+    </div>
+</h3>
+{% endblock %}

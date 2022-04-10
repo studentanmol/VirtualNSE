@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+<h1>Welcome, {{ names }}!</h1><br>
+<h3>Your Portfolio</h3><br><br>
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>Symbol</th>
+            <th>Name</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for portfolios in portfolio %}
+        <tr>
+            <td>{{ portfolios.symbol }}</td>
+            <td>{{ portfolios.name }}</td>
+            <td>{{ portfolios.shares }}</td>
+            <td>{{ portfolios.price | rupees }}</td>
+            <td>{{ portfolios.total | rupees }}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td>CASH</td>
+            <td colspan=3></td>
+            <td><b><i>{{ cash | rupees }}</i></b></td>
+        </tr>
+        <tr>
+            <td colspan=3></td>
+            <td><b>{{ total | rupees }}</b></td>
+            <td><b>{{ grand_total | rupees }}<b/></td>
+        </tr>
+    </tbody>
+</table>
+<h1>NET EARNINGS: {{ message | rupees }}</h1>
+
+{% endblock %}

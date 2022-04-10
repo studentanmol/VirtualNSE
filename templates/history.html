@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>Symbol</th>
+            <th>Status</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>Total</th>
+            <th>Transacted</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for transactions in history %}
+        <tr>
+            <td>{{ transactions.symbol }}</td>
+            <td>{{ transactions.status }}</td>
+            <td>{{ transactions.number }}</td>
+            <td>{{ transactions.price | rupees }}</td>
+            <td>{{ transactions.total | rupees }}</td>
+            <td>{{ transactions.time }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
+{% endblock %}
